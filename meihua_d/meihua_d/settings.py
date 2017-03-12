@@ -28,6 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '114.215.94.252',
     '192.168.188.128',
+    '172.16.104.192',
+    '172.16.104.195',
+    '172.16.104.28',
 ]
 
 
@@ -43,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'login',
     'learn',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +64,7 @@ ROOT_URLCONF = 'meihua_d.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,7 +86,7 @@ WSGI_APPLICATION = 'meihua_d.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'meuhua_db',
+        'NAME': 'meihua_db',
         'USER': 'root',
         'PASSWORD': '',
     }

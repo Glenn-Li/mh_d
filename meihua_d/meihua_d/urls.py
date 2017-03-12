@@ -16,8 +16,12 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from learn import views as learn_view
+from blog import views as blog_view
 
 urlpatterns = [
+    url(r'^$', learn_view.home, name='home'),
+    url(r'^blog/detail/(\d+)/$', blog_view.get_detail, name='get_detail'),
+    url(r'^blog/$', blog_view.get_blogs, name='get_blogs'),
     url(r'^learn/(\d+)/(\d+)/$', learn_view.add, name='add'),
     url(r'^learn/$', learn_view.index),
     url(r'^polls/', include('polls.urls')),
