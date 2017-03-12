@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     '172.16.104.192',
     '172.16.104.195',
     '172.16.104.28',
+    '192.168.112.130',
 ]
 
 
@@ -82,13 +83,15 @@ WSGI_APPLICATION = 'meihua_d.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+# password at home: L!1yaqiang110
+# password at company:(null)
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'meihua_db',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'L!1yaqiang110',
     }
 }
 
