@@ -1,0 +1,19 @@
+
+#stop firewalld
+systemctl stop firewalld
+
+# nat port
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --reload
+
+#start project by uwsgi
+uwsgi --http :9090 --chdir /home/mh_d/meihua_d --home=/usr/bin/virtualenv --module /home/mh_d/meihua_d/meihua_d/wsgi.py
+
+#startup supervisor
+supervisord -c /etc/supervisord.conf
+
+#restart meihua_d
+supervisorctl -c /etc/supervisord.conf restart meihua_d
+
+#start stop restart
+supervisorctl -c /etc/supervisord.conf [start|stop|restart] [program-name|all]

@@ -10,9 +10,15 @@ class Category(models.Model):
     """docstring for Category."""
     name = models.CharField('名称', max_length=16)
 
+    def __unicode__(self):
+        return self.name
+
 class Tag(models.Model):
     """docstring for Tag."""
     name = models.CharField('名称', max_length=16)
+
+    def __unicode__(self):
+        return self.name
 
 class Blog(models.Model):
     """docstring for Blog."""
@@ -24,6 +30,9 @@ class Blog(models.Model):
     category = models.ForeignKey('Category', verbose_name='分类')
     tags = models.ManyToManyField('Tag', verbose_name='标签')
 
+    def __unicode__(self):
+        return self.title
+
 class Comment(models.Model):
     """docstring for Comment."""
 
@@ -34,3 +43,6 @@ class Comment(models.Model):
     content = models.CharField('内容', max_length=140)
 
     created = models.DateTimeField('发布时间', auto_now_add=True)
+
+    def __unicode__(self):
+        return self.content

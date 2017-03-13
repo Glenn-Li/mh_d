@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     '172.16.104.195',
     '172.16.104.28',
     '192.168.112.130',
+    '*',
 ]
 
 
@@ -48,7 +49,10 @@ INSTALLED_APPS = [
     'login',
     'learn',
     'blog',
+#    'users',
 ]
+
+#AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,3 +137,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
